@@ -10,7 +10,6 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: sans-serif;
   height: 100vh;
   background-color: antiquewhite;
 }
@@ -29,15 +28,25 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  height: 10rem;
 }
 
 .header-heading {
   width: 100vw;
+  height: 3rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .today {
   text-align: center;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .currentDate {
@@ -56,6 +65,8 @@ body {
 .currentMonthSelect {
   background-color: transparent;
   border: none;
+  border: 1px solid black;
+  border-radius: 0.4rem;
   font-size: 1.8rem;
   width: 10rem;
   text-align: center;
@@ -65,6 +76,12 @@ body {
   width: 6rem;
   font-size: 1.8rem;
   text-align: center;
+}
+
+.currentYearInput {
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 0.4rem;
 }
 
 select {
@@ -80,14 +97,24 @@ select {
   width: 20rem;
 }
 
+.monthSelector, .yearSelector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .main {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   width: 100vw;
+  height: calc(100vh - 4rem - 10rem);
   flex-grow: 1;
   padding-top: 2rem;
+  gap: 1rem;
 }
 
 .calendar-box {
@@ -96,8 +123,12 @@ select {
   height: auto;
   display: flex;
   flex-direction: column;
+  align-self: stretch;
 }
 
+.month {
+  flex-grow: 1;
+}
 .month__header {
   background-color: aliceblue;
   display: grid;
@@ -110,10 +141,10 @@ select {
 .month__body {
   background-color: bisque;
   margin: 0.4rem;
-  flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.4rem;
+  height: calc(100% - 3rem - 1.2rem);
 }
 
 .weekday-cell {
@@ -130,8 +161,8 @@ select {
   background-color: cadetblue;
   color: aliceblue;
   font-size: 1.6rem;
-  height: 10vh;
   padding: 0.6rem;
+  height: auto;
 }
 .day-cell__empty {
   background-color: darkgray;
@@ -152,6 +183,10 @@ button {
   display: none;
 }
 
+select, option, input {
+  font-family: var(--font-inter);
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -167,6 +202,66 @@ input[type=number] {
 
 .footer {
   padding: 1rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
+
+.calendar-year {
+  display: grid;
+}
+.calendar-year .weekday-cell, .calendar-year .day-cell {
+  font-size: 1rem;
+  padding: 0.1rem;
+}
+.calendar-year__month__name {
+  font-size: 1.4rem;
+  width: 100%;
+  padding-left: 0.4rem;
+}
+
+.main {
+  position: relative;
+  padding: 0 1rem 1rem;
+}
+
+.calendar-box {
+  width: 80%;
+  height: auto;
+}
+
+.calendar-year {
+  width: 20%;
+  grid-template-columns: 1fr;
+  max-height: 100%;
+  overflow: scroll;
+}
+
+/* 
+@media screen and (max-width: 400px) {
+    .calendar-year {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+    .calendar-year {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 850px) {
+    .calendar-year {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 851px) and (max-width: 1200px) {
+    .calendar-year {
+        grid-template-columns: repeat(4, 1fr);
+    }
+} */
 
 /*# sourceMappingURL=index.css.map */

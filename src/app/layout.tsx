@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/index.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+	subsets: ["latin"],
+	variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
 	title: "Next Calendar",
@@ -11,8 +14,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html lang="en">
-			<body className={inter.className}>{children}</body>
+		<html lang="en" className={`${inter.className} ${inter.variable}`}>
+			<body>{children}</body>
 		</html>
 	);
 }

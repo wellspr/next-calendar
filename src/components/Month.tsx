@@ -1,9 +1,9 @@
 import { DateType } from "@/types";
-import { isLeapYear, months } from "@/utils";
+import { isLeapYear } from "@/utils";
 import Day from "./Day";
 import Week from "./Week";
 
-export default function Month({ date }: { date: DateType }) {
+export default function Month({ date, miniature }: { date: DateType, miniature?: boolean }) {
 
     const { month, day, year } = date;
     const firstWeekday = new Date(`${month + 1}/01/${year}`).getDay();
@@ -48,7 +48,7 @@ export default function Month({ date }: { date: DateType }) {
     return (
         <div className="month">
             <div className="month__header">
-                <Week />
+                <Week miniature={miniature} />
             </div>
             <div className="month__body">
                 {generatedCells}

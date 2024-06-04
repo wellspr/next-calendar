@@ -1,9 +1,13 @@
 import { WeekdayType } from "@/types";
 
-export default function Weekday(weekday: WeekdayType) {
+export default function Weekday({ miniature, weekday }: {weekday: WeekdayType, miniature: boolean}) {
     return (
         <div className="weekday-cell">
-            { weekday.value }
+            {
+                miniature ?
+                    weekday.value[0] :
+                    weekday.value
+            }
         </div>
     );
 }
