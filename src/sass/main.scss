@@ -254,6 +254,65 @@ input[type=number] {
     overflow: scroll;
 }
 
+@media screen and (max-width: 600px) {
+    .main {
+        flex-direction: column;
+        height: unset;
+    }
+
+    .calendar-box {
+        width: 100%;
+    }
+
+    .calendar-year {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+    }
+
+    .currentDate {
+        font-size: 1.4rem;
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
+
+    .wrapper {
+        width: unset;
+    }
+
+    //.currentMonth {}
+}
+
+@media screen and (min-width: 1200px) {
+    .calendar-box {
+        width: 60%;
+    }
+
+    .calendar-year {
+        width: 40%;
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+    }
+
+    .currentDate {
+        font-size: 1.4rem;
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
+
+    .wrapper {
+        width: unset;
+    }
+
+    //.currentMonth {}
+}
+
 /* 
 @media screen and (max-width: 400px) {
     .calendar-year {
