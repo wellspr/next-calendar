@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import * as T from "@tabler/icons-react";
 
 export default function YearSelector({
     year,
@@ -40,7 +41,9 @@ export default function YearSelector({
 
     return (
         <div className="yearSelector">
-            <button onClick={prevYear}>{"<"}</button>
+            <button onClick={prevYear}>
+                <T.IconChevronLeft className="yearSelector__icon"/>
+            </button>
             {editable ?
                 <form onSubmit={e => {
                     e.preventDefault();
@@ -60,7 +63,9 @@ export default function YearSelector({
                     setEditable(true);
                 }}>{year}</div>
             }
-            <button onClick={nextYear}>{">"}</button>
+            <button onClick={nextYear}>
+                <T.IconChevronRight className="yearSelector__icon"/>
+            </button>
         </div>
     );
 }

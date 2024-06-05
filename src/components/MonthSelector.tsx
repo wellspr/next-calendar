@@ -1,5 +1,6 @@
 import { months } from "@/utils";
 import { useEffect, useRef } from "react";
+import * as T from "@tabler/icons-react";
 
 export default function MonthSelector({
     month,
@@ -41,7 +42,9 @@ export default function MonthSelector({
 
     return (
         <div className="monthSelector">
-            <button onClick={prevMonth}>{"<"}</button>
+            <button onClick={prevMonth}>
+                <T.IconChevronLeft className="monthSelector__icon"/>
+            </button>
             {editable ?
                 <select
                     ref={ref}
@@ -71,7 +74,9 @@ export default function MonthSelector({
                     {months[month]}
                 </div>
             }
-            <button onClick={nextMonth}>{">"}</button>
+            <button onClick={nextMonth}>
+                <T.IconChevronRight className="monthSelector__icon"/>
+            </button>
         </div>
     );
 }

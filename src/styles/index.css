@@ -103,6 +103,10 @@ select {
   align-items: center;
   width: 100%;
   height: 100%;
+  padding: 1rem 0;
+}
+.monthSelector__icon, .yearSelector__icon {
+  height: 1.6rem;
 }
 
 .main {
@@ -175,8 +179,10 @@ select {
 button {
   background-color: transparent;
   border: none;
-  padding: 1rem;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hidden {
@@ -206,7 +212,11 @@ input[type=number] {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
   width: 100%;
+}
+.footer__github-icon {
+  height: 2rem;
 }
 
 .calendar-year {
@@ -235,6 +245,7 @@ input[type=number] {
 .calendar-year {
   width: 20%;
   grid-template-columns: 1fr;
+  gap: 1rem;
   max-height: 100%;
   overflow: scroll;
 }

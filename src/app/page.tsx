@@ -6,6 +6,7 @@ import MonthSelector from "@/components/MonthSelector";
 import Timestring from "@/components/Timestring";
 import YearSelector from "@/components/YearSelector";
 import { months } from "@/utils";
+import * as T from "@tabler/icons-react";
 
 export default function Home() {
 
@@ -119,6 +120,9 @@ export default function Home() {
 			</main >
 			<footer className="footer">
 				<p>&copy; 2024 - Made by Paulo</p>
+				<a href="https://github.com/wellspr/next-calendar">
+					<T.IconBrandGithub  className="footer__github-icon"/>
+				</a>
 			</footer>
 		</div>
 	);
